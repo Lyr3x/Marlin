@@ -31,7 +31,7 @@
 
 // Use one of these or SDCard-based Emulation will be used
 //#define SRAM_EEPROM_EMULATION   // Use BackSRAM-based EEPROM emulation
-//#define FLASH_EEPROM_EMULATION  // Use Flash-based EEPROM emulation
+#define FLASH_EEPROM_EMULATION  // Use Flash-based EEPROM emulation
 
 //
 // Servos
@@ -249,7 +249,7 @@
         #define NEOPIXEL_PIN    PG3
       #endif
     #endif // !FYSETC_MINI_12864
-
+    
     #if ENABLED(ULTIPANEL)
       #define LCD_PINS_D5  PG3
       #define LCD_PINS_D6  PG6
