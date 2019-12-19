@@ -1457,7 +1457,7 @@
  *    P1  Raise the nozzle always to Z-park height.
  *    P2  Raise the nozzle by Z-park amount, limited to Z_MAX_POS.
  */
-//#define NOZZLE_PARK_FEATURE
+#define NOZZLE_PARK_FEATURE
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z_raise }
@@ -2144,13 +2144,13 @@
  *
  */
 //#define RGB_LED
-//#define RGBW_LED
+#define RGBW_LED
 
 #if EITHER(RGB_LED, RGBW_LED)
-  //#define RGB_LED_R_PIN 34
-  //#define RGB_LED_G_PIN 43
-  //#define RGB_LED_B_PIN 35
-  //#define RGB_LED_W_PIN -1
+  #define RGB_LED_R_PIN PF7
+  #define RGB_LED_G_PIN PF8
+  #define RGB_LED_B_PIN PF9
+  #define RGB_LED_W_PIN PF10
 #endif
 
 // Support for Adafruit Neopixel LED driver
