@@ -2158,13 +2158,13 @@
  *
  */
 //#define RGB_LED
-#define RGBW_LED
+// #define RGBW_LED
 
 #if EITHER(RGB_LED, RGBW_LED)
-  #define RGB_LED_R_PIN PF7
-  #define RGB_LED_G_PIN PF8
-  #define RGB_LED_B_PIN PF9
-  #define RGB_LED_W_PIN PF10
+  #define RGB_LED_R_PIN 15
+  #define RGB_LED_G_PIN 56
+  #define RGB_LED_B_PIN 55
+  #define RGB_LED_W_PIN 57
 #endif
 // WIfi:PC6 12(TIM3), PC7 13 (TIM3) 
 // Extension 1: PC9 15 (TIM3)
