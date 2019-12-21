@@ -2158,26 +2158,33 @@
  *
  */
 //#define RGB_LED
-#define RGBW_LED
+// #define RGBW_LED
 
 #if EITHER(RGB_LED, RGBW_LED)
-  #define RGB_LED_R_PIN PF7
-  #define RGB_LED_G_PIN PF8
-  #define RGB_LED_B_PIN PF9
-  #define RGB_LED_W_PIN PF10
+  #define RGB_LED_R_PIN 15
+  #define RGB_LED_G_PIN 56
+  #define RGB_LED_B_PIN 55
+  #define RGB_LED_W_PIN 57
 #endif
+// WIfi:PC6 12(TIM3), PC7 13 (TIM3) 
+// Extension 1: PC9 15 (TIM3)
+// Extension 2: PD2 27(TIM3), PE0, PE4, PE2 geht nicht
+// BLTOUCH: PA2 37 geht nicht
+//I2C: PB6 (31) PB7 (32) geht nicht
+//Fan2: 63
+
 
 // Support for Adafruit Neopixel LED driver
-//#define NEOPIXEL_LED
+#define NEOPIXEL_LED
 #if ENABLED(NEOPIXEL_LED)
-  #define NEOPIXEL_TYPE   NEO_GRBW // NEO_GRBW / NEO_GRB - four/three channel driver type (defined in Adafruit_NeoPixel.h)
-  #define NEOPIXEL_PIN     4       // LED driving pin
+  #define NEOPIXEL_TYPE   NEO_GRB // NEO_GRBW / NEO_GRB - four/three channel driver type (defined in Adafruit_NeoPixel.h)
+  #define NEOPIXEL_PIN     PC9       // LED driving pin
   //#define NEOPIXEL2_TYPE NEOPIXEL_TYPE
   //#define NEOPIXEL2_PIN    5
-  #define NEOPIXEL_PIXELS 30       // Number of LEDs in the strip, larger of 2 strips if 2 neopixel strips are used
+  #define NEOPIXEL_PIXELS 12       // Number of LEDs in the strip, larger of 2 strips if 2 neopixel strips are used
   #define NEOPIXEL_IS_SEQUENTIAL   // Sequential display for temperature change - LED by LED. Disable to change all LEDs at once.
-  #define NEOPIXEL_BRIGHTNESS 127  // Initial brightness (0-255)
-  //#define NEOPIXEL_STARTUP_TEST  // Cycle through colors at startup
+  #define NEOPIXEL_BRIGHTNESS 255  // Initial brightness (0-255)
+  #define NEOPIXEL_STARTUP_TEST  // Cycle through colors at startup
 
   // Use a single Neopixel LED for static (background) lighting
   //#define NEOPIXEL_BKGD_LED_INDEX  0               // Index of the LED to use
